@@ -25,18 +25,18 @@ export default function Home() {
           <h2 className='mt-4 mb-1'>The Latest</h2>
           <div className="line mb-4"></div>
           <div className="cards-container">
-              <HorizontalBigCard id={FoodPost[0].id} img={FoodPost[0].img} title={FoodPost[0].title} details={FoodPost[0].details} date={FoodPost[0].date} type={FoodPost[0].type}/>
+              
+               <HorizontalBigCard id={FitnessPost[0].id} img={FitnessPost[0].img} title={FitnessPost[0].title} details={FitnessPost[0].details} date={FitnessPost[0].date} type={FitnessPost[0].type}/>
 
-              <HorizontalBigCard id={FoodPost[1].id} img={FoodPost[1].img} title={FoodPost[1].title} details={FoodPost[1].details} date={FoodPost[1].date} type={FoodPost[1].type}/>
+              <HorizontalBigCard id={FitnessPost[1].id} img={FitnessPost[1].img} title={FitnessPost[1].title} details={FitnessPost[1].details} date={FitnessPost[1].date} type={FitnessPost[1].type}/>
 
               <HorizontalBigCard id={TechnologyPost[0].id} img={TechnologyPost[0].img} title={TechnologyPost[0].title} details={TechnologyPost[0].details} date={TechnologyPost[0].date} type={TechnologyPost[0].type}/>
 
               <HorizontalBigCard id={TechnologyPost[1].id} img={TechnologyPost[1].img} title={TechnologyPost[1].title} details={TechnologyPost[1].details} date={TechnologyPost[1].date} type={TechnologyPost[1].type}/>
 
-              <HorizontalBigCard id={FitnessPost[0].id} img={FitnessPost[0].img} title={FitnessPost[0].title} details={FitnessPost[0].details} date={FitnessPost[0].date} type={FitnessPost[0].type}/>
+              <HorizontalBigCard id={FoodPost[0].id} img={FoodPost[0].img} title={FoodPost[0].title} details={FoodPost[0].details} date={FoodPost[0].date} type={FoodPost[0].type}/>
 
-              <HorizontalBigCard id={FitnessPost[1].id} img={FitnessPost[1].img} title={FitnessPost[1].title} details={FitnessPost[1].details} date={FitnessPost[1].date} type={FitnessPost[1].type}/>
-
+              <HorizontalBigCard id={FoodPost[1].id} img={FoodPost[1].img} title={FoodPost[1].title} details={FoodPost[1].details} date={FoodPost[1].date} type={FoodPost[1].type}/>
               
           </div>
 

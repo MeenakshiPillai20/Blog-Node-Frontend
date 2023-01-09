@@ -37,22 +37,22 @@ export default function Header() {
           >
              <ul className="navbar-nav"r>
             <li className="nav-item">
-              <NavLink to="/" className="nav-link nav-linker active">   Home    </NavLink>
+              <NavLink to="/" activeClassName="active" className="nav-link nav-linker ">   Home    </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/bollywood" className="nav-link nav-linker active">  Bollywood   </NavLink>
+              <NavLink to="/bollywood" className="nav-link nav-linker ">  Bollywood   </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/technology" className="nav-link nav-linker active">   Technology   </NavLink>
+              <NavLink to="/technology" className="nav-link nav-linker ">   Technology   </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/hollywood" className="nav-link nav-linker active">   Hollywood    </NavLink>
+              <NavLink to="/hollywood" className="nav-link nav-linker ">   Hollywood    </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/fitness" className="nav-link nav-linker active">   Fitness    </NavLink>
+              <NavLink to="/fitness" className="nav-link nav-linker ">   Fitness    </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/food" className="nav-link active ms-5 me-5">   Food    </NavLink>
+              <NavLink to="/food" className="nav-link  ms-5 me-5">   Food    </NavLink>
             </li>
           </ul>
           </Nav>
