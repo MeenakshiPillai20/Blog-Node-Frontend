@@ -1,9 +1,9 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
  
  export function HorizontalBigCard(props) {
    return (
-    <NavLink to="/nextPage"  className=" text-decoration-none text-dark hori-card">
+    <Link to="/nextPage" state={{ data: props}}  className=" text-decoration-none text-dark hori-card">
     <img src={props.img} alt="" height="200px" width="328px" className="card-img"/>
     <div className="hori-box">
         <h3>{props.title} </h3>
@@ -12,14 +12,14 @@ import { NavLink } from "react-router-dom";
            <span className="fw-bold">{props.type} : </span>{props.date}
         </p>
     </div>
-</NavLink>
+</Link>
    )
  }
  
  
 export function CardHead (props){
   return (
-    <NavLink to="/nextPage" className="text-decoration-none text-dark mt-3 hori-sm-card">
+    <Link to="/nextPage" state={{ data: props}} className="text-decoration-none text-dark mt-3 hori-sm-card">
         <div className="d-flex mx-2 align-items-center">
            <img src={props.img} alt="" height="80px" width="80px" className="mt-3 me-2"/>
            <h4 className="horizontal-head mt-3">{props.title} </h4>
@@ -29,7 +29,7 @@ export function CardHead (props){
            <span className="fw-bold">{props.type} </span>
            <span className="text-grey"> / {props.date}</span>
         </p>
-      </NavLink>
+      </Link>
   );
  }
  
@@ -37,7 +37,7 @@ export function CardHead (props){
 export default function HorizontalSmallCard(props) {
   return (
     <div className="hori-sm-card">
-    <NavLink to="/nextPage" className=" text-decoration-none text-dark ">
+    <Link to="/nextPage" state={{ data: props}} className=" text-decoration-none text-dark ">
       <img src={props.img} alt="" height="200px" width="325px" className="hori-sm-img"/>
       <div className="d-flex  mx-2">
         <h3 className="horizontal-head mt-3 "> {props.title} </h3>
@@ -48,7 +48,7 @@ export default function HorizontalSmallCard(props) {
         <span className="fw-bold">{props.type} </span>
         <span className="text-grey"> / {props.date}</span>
       </p>
-    </NavLink>
+    </Link>
   </div>
   )
 }

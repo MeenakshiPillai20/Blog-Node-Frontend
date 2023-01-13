@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
 import HorizontalSmallCard, { CardHead } from "../Components/HorizontalCard";
 import VerticalSmallCard from "../Components/VerticalCard";
-import BollywoodPost from "../data/BollywoodData";
-
-import { BollywoodFirstPost, BollywoodTopPost} from "../data/BollywoodData";
 
 export default function Bollywood() {
+  const [Post, setPost] = useState("");
+  const [FirstPost, setFirstPost] = useState("");
+  const [TopPost, setTopPost] = useState("");
+
+  useEffect(() => {
+    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/bollywoodPost")
+      .then((res) => res.json()).then((json) => setPost(json));
+  }, []);
+
+  useEffect(() => {
+    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/bollywoodFirstPost")
+      .then((res) => res.json()).then((json) => setFirstPost(json));
+  }, []);
+
+  useEffect(() => {
+    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/bollywoodTopPost")
+      .then((res) => res.json()).then((json) => setTopPost(json));
+  }, []);
   return (
     <>
       <Header />
@@ -16,41 +31,38 @@ export default function Bollywood() {
             <h2 className=" mt-3">Bollywood</h2>
             <div className="line"></div>
 
-            {BollywoodPost.map((val) => {
-              return (
-                <>
-                   <VerticalSmallCard id={val.id} img={val.img} title={val.title} details={val.details} date={val.date}
-                    type={val.type}/>
+            {Post && Post.map((val) => {
+                return (
+                  <>
+                    <VerticalSmallCard id={val.id} img={val.img} title={val.title}
+                      details={val.details} date={val.date} type={val.type}/>
                     <hr />
-                </>
-              );
-            })}
-            
-          
+                  </>
+                );
+              })}
           </div>
           <div className="content-box-side">
             <h2 className="mt-3">Top Posts</h2>
             <div className="line mb-4"></div>
-        
-            {BollywoodFirstPost.map((val) => {
-              return (
-                <>
-                  <HorizontalSmallCard id={val.id} img={val.img} title={val.title} date={val.date} type={val.type}
-                  num={val.num}/>
-                  <hr />
-                </>
-              );
-            })}
-             {BollywoodTopPost.map((val) => {
-              return (
-                <>
-                  <CardHead id={val.id} img={val.img} title={val.title} date={val.date} type={val.type}
-                  num={val.num}/>
-                  <hr />
-                </>
-              );
-            })}
-        
+
+            {FirstPost && FirstPost.map((val) => {
+                return (
+                  <>
+                    <HorizontalSmallCard id={val.id} img={val.img} title={val.title}
+                      date={val.date} type={val.type} num={val.num}/>
+                    <hr />
+                  </>
+                );
+              })}
+            {TopPost && TopPost.map((val) => {
+                return (
+                  <>
+                    <CardHead id={val.id} img={val.img} title={val.title}
+                      date={val.date} type={val.type} num={val.num}/>
+                    <hr />
+                  </>
+                );
+              })}
           </div>
         </div>
       </div>

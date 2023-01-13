@@ -37,7 +37,7 @@ export default function Header() {
           >
              <ul className="navbar-nav"r>
             <li className="nav-item">
-              <NavLink to="/" activeClassName="active" className="nav-link nav-linker ">   Home    </NavLink>
+              <NavLink to="/" activeclassname="active" className="nav-link nav-linker ">   Home    </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/bollywood" className="nav-link nav-linker ">  Bollywood   </NavLink>

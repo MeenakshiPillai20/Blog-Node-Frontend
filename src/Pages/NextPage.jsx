@@ -3,14 +3,19 @@ import Button from "react-bootstrap/Button";
 import logo from '../images/face.png';
 import share from '../images/share.svg';
 import clap from '../images/clap.svg';
+import { useLocation } from "react-router-dom";
 
 
 
 
-
-const NextPage = (props) => {
+const NextPage = () => {
  
- 
+  const location= useLocation();
+   const {data } = location.state;
+   console.log(data)
+
+
+
   return (
     <>
   
@@ -34,24 +39,24 @@ const NextPage = (props) => {
           </a>
         </div>
         <div className="box-center">
-          <h3 className="my-3 ">{props.title} </h3>
+          <h3 className="my-3 ">{data.title} </h3>
           <div className="d-flex mb-3">
             <img src={logo} alt="" className="circle me-3 "/>
             <div className="logo-detail">
               <h5 className="m-0 mt-1">Dmitry Nozhe</h5>
               <p className="grey-text m-0 text-muted">
-                Jan 28, 2019 · 10 min read
+                {data.date} · 10 min read
               </p>
             </div>
             <a href="#fg" className="mt-3 ms-5">
-              <i class="fab fa-facebook text-grey"></i>
-              <i class="fab fa-instagram-square ms-1 text-grey"></i>
-              <i class="fab fa-twitter ms-1 text-grey"></i>
-              <i class="fab fa-youtube ms-1 text-grey"></i>
+              <i className="fab fa-facebook text-grey"></i>
+              <i className="fab fa-instagram-square ms-1 text-grey"></i>
+              <i className="fab fa-twitter ms-1 text-grey"></i>
+              <i className="fab fa-youtube ms-1 text-grey"></i>
             </a>
           </div>
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_FH1WYEDn9jV1J6rI-AoiTI3PT-NgFwiNPQ&usqp=CAU"
+            src={data.img}
             alt=""
             height="200px"
             width="396px"
@@ -59,9 +64,7 @@ const NextPage = (props) => {
           />
 
           <p className="next-para">
-            Lorem ipsum dolor sit amet amet amet consectetur adipisicing elit.
-            Tenetur numquam voluptatem asperiores rerum iste aliquid omnis minus
-            dolores, eius amet.
+            {data.details}
           </p>
 
           <div className="resp-share-box ">

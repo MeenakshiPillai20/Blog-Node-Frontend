@@ -1,12 +1,12 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
 export function VerticalCard(props) {
 
   return (
-    <NavLink to="/nextPage" className="text-decoration-none text-dark d-flex vertical-card boxx">
+    <Link to="/nextPage" state={{ data: props}} className="text-decoration-none text-dark d-flex vertical-card boxx">
         <img src={props.img} alt="" height="200px" width="328px" className="card-img"/>
         <div className="ver-box">
            <h3 >{props.title}</h3>
@@ -15,14 +15,14 @@ export function VerticalCard(props) {
            <span className="fw-bold">{props.type} : </span>{props.date}
         </p>
       </div>
-    </NavLink>
+    </Link>
   )
 }
 
 
 function VerticalSmallCard(props) {
   return (
-    <NavLink  to="/nextPage" className="text-decoration-none text-dark d-flex vertical-sm-card ">
+    <Link to="/nextPage" state={{ data: props}} className="text-decoration-none text-dark d-flex vertical-sm-card ">
     <img src={props.img} alt="" height="200px" width="250px" className="hori-sm-img"/>
     <div className="ver-sm-box">
       <h3 >{props.title}</h3>
@@ -32,7 +32,7 @@ function VerticalSmallCard(props) {
         <span className="fw-bold">{props.type} : </span>{props.date}
      </p>
    </div>
- </NavLink>
+ </Link>
   )
 }
 
