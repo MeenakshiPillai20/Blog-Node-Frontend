@@ -50,16 +50,23 @@ height: 170px;
   gap: 10px;
 }
 .bottom-left {
-  color:white;
+  color:rgb(255, 255, 255);
   position: absolute;
-  bottom: 20px;
+  top: 20px;
   left: 40px;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
 }
 .bottom-left-small {
   color:white;
   position: absolute;
   bottom: 5px;
   left: 30px;
+
+}
+.text-black{
+  color: rgb(224, 28, 28);
+  font-weight: bold;
 }
 .text-grey{
   color: rgb(170, 169, 169);
@@ -74,7 +81,8 @@ height: 170px;
   border-bottom: 2px solid rgb(236, 52, 52);
 }
 .hori-card{
-  max-width: 330px;
+  max-width: 320px;
+ 
  
 }
 .nav-link{
@@ -84,7 +92,8 @@ height: 170px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 60px;
+  gap: 30px;
+
 }
 
 .vertical-card{
@@ -177,6 +186,9 @@ margin: 0px auto;
 }
 .activeClass{
   color: blue;
+}
+.card-img{
+  width: 200px;
 }
 
 

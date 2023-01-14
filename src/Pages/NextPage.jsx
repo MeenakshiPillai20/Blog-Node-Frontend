@@ -49,19 +49,13 @@ const NextPage = () => {
               </p>
             </div>
             <a href="#fg" className="mt-3 ms-5">
-              <i className="fab fa-facebook text-grey"></i>
-              <i className="fab fa-instagram-square ms-1 text-grey"></i>
-              <i className="fab fa-twitter ms-1 text-grey"></i>
-              <i className="fab fa-youtube ms-1 text-grey"></i>
+              <a href="https://www.facebook.com/"><i className="fab fa-facebook text-grey"></i></a>
+              <a href="https://www.instagram.com/"><i className="fab fa-instagram-square ms-1 text-grey"></i></a>
+              <a href="https://twitter.com/"><i className="fab fa-twitter ms-1 text-grey"></i></a>
+              <a href="https://www.youtube.com/"><i className="fab fa-youtube ms-1 text-grey"></i></a>
             </a>
           </div>
-          <img
-            src={data.img}
-            alt=""
-            height="200px"
-            width="396px"
-            className="card-img"
-          />
+          <img src={data.img} alt="" height="200px" width="396px" className="card-img" />
 
           <p className="next-para">
             {data.details}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
-import HorizontalSmallCard, { CardHead } from "../Components/HorizontalCard";
-import VerticalSmallCard from "../Components/VerticalCard";
+import ArticlesCard, { TopPostCard, TopPostsCardsHead } from "../Components/ArticlesCard";
+
 
 const Fitness = () => {
   const [Post, setPost] = useState("");
@@ -9,17 +9,17 @@ const Fitness = () => {
   const [TopPost, setTopPost] = useState("");
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/fitnessPost")
+    fetch("http://localhost:8000/fitnessPost")
       .then((res) => res.json()).then((json) => setPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/fitnessFirstPost")
+    fetch("http://localhost:8000/fitnessFirstPost")
       .then((res) => res.json()).then((json) => setFirstPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/fitnessTopPost")
+    fetch("http://localhost:8000/fitnessTopPost")
       .then((res) => res.json()).then((json) => setTopPost(json));
   }, []);
   return (
@@ -33,7 +33,7 @@ const Fitness = () => {
             {Post && Post.map((val) => {
                 return (
                   <>
-                    <VerticalSmallCard id={val.id} img={val.img} title={val.title}
+                    <ArticlesCard id={val.id} img={val.img} title={val.title}
                       details={val.details} date={val.date} type={val.type}/>
                     <hr />
                   </>
@@ -46,7 +46,7 @@ const Fitness = () => {
             {FirstPost && FirstPost.map((val) => {
                 return (
                   <>
-                    <HorizontalSmallCard id={val.id} img={val.img} title={val.title}
+                    <TopPostCard id={val.id} img={val.img} title={val.title}
                       date={val.date} type={val.type} num={val.num}/>
                     <hr />
                   </>
@@ -55,7 +55,7 @@ const Fitness = () => {
             {TopPost && TopPost.map((val) => {
                 return (
                   <>
-                    <CardHead id={val.id} img={val.img} title={val.title}
+                    <TopPostsCardsHead id={val.id} img={val.img} title={val.title}
                       date={val.date} type={val.type} num={val.num}/>
                     <hr />
                   </>

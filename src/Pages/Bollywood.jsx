@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Components/Header";
-import HorizontalSmallCard, { CardHead } from "../Components/HorizontalCard";
-import VerticalSmallCard from "../Components/VerticalCard";
+
+import ArticlesCard, { TopPostCard, TopPostsCardsHead } from "../Components/ArticlesCard";
+
 
 export default function Bollywood() {
   const [Post, setPost] = useState("");
@@ -9,17 +10,17 @@ export default function Bollywood() {
   const [TopPost, setTopPost] = useState("");
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/bollywoodPost")
+    fetch("http://localhost:8000/bollywoodPost")
       .then((res) => res.json()).then((json) => setPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/bollywoodFirstPost")
+    fetch("http://localhost:8000/bollywoodFirstPost")
       .then((res) => res.json()).then((json) => setFirstPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/bollywoodTopPost")
+    fetch("http://localhost:8000/bollywoodTopPost")
       .then((res) => res.json()).then((json) => setTopPost(json));
   }, []);
   return (
@@ -34,7 +35,7 @@ export default function Bollywood() {
             {Post && Post.map((val) => {
                 return (
                   <>
-                    <VerticalSmallCard id={val.id} img={val.img} title={val.title}
+                    <ArticlesCard id={val.id} img={val.img} title={val.title}
                       details={val.details} date={val.date} type={val.type}/>
                     <hr />
                   </>
@@ -48,7 +49,7 @@ export default function Bollywood() {
             {FirstPost && FirstPost.map((val) => {
                 return (
                   <>
-                    <HorizontalSmallCard id={val.id} img={val.img} title={val.title}
+                    <TopPostCard id={val.id} img={val.img} title={val.title}
                       date={val.date} type={val.type} num={val.num}/>
                     <hr />
                   </>
@@ -57,7 +58,7 @@ export default function Bollywood() {
             {TopPost && TopPost.map((val) => {
                 return (
                   <>
-                    <CardHead id={val.id} img={val.img} title={val.title}
+                    <TopPostsCardsHead id={val.id} img={val.img} title={val.title}
                       date={val.date} type={val.type} num={val.num}/>
                     <hr />
                   </>

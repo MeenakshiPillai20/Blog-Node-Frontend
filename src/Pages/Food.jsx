@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import ArticlesCard, { TopPostCard, TopPostsCardsHead } from "../Components/ArticlesCard";
 import Header from "../Components/Header";
-import HorizontalSmallCard, { CardHead } from "../Components/HorizontalCard";
-import VerticalSmallCard from "../Components/VerticalCard";
+
 
 export default function Food() {
   const [Post, setPost] = useState("");
@@ -9,17 +9,17 @@ export default function Food() {
   const [TopPost, setTopPost] = useState("");
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/foodPost")
+    fetch("http://localhost:8000/foodPost")
       .then((res) => res.json()).then((json) => setPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/foodFirstPost")
+    fetch("http://localhost:8000/foodFirstPost")
       .then((res) => res.json()).then((json) => setFirstPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/foodTopPost")
+    fetch("http://localhost:8000/foodTopPost")
       .then((res) => res.json()).then((json) => setTopPost(json));
   }, []);
   return (
@@ -33,7 +33,7 @@ export default function Food() {
             {Post && Post.map((val) => {
               return (
                 <>
-                  <VerticalSmallCard id={val.id} img={val.img} title={val.title}
+                  <ArticlesCard id={val.id} img={val.img} title={val.title}
                     details={val.details} date={val.date} type={val.type}/>
                   <hr />
                 </>
@@ -46,7 +46,7 @@ export default function Food() {
             {FirstPost && FirstPost.map((val) => {
               return (
                 <>
-                  <HorizontalSmallCard id={val.id} img={val.img} title={val.title}
+                  <TopPostCard id={val.id} img={val.img} title={val.title}
                     date={val.date} type={val.type} num={val.num}/>
                   <hr />
                 </>
@@ -55,7 +55,7 @@ export default function Food() {
             {TopPost && TopPost.map((val) => {
               return (
                 <>
-                  <CardHead id={val.id} img={val.img} title={val.title} 
+                  <TopPostsCardsHead id={val.id} img={val.img} title={val.title} 
                     date={val.date} type={val.type} num={val.num} />
                   <hr />
                 </>

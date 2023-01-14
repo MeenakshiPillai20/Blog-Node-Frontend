@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import ArticlesCard, { TopPostCard, TopPostsCardsHead } from "../Components/ArticlesCard";
 import Header from "../Components/Header";
-import HorizontalSmallCard, { CardHead } from "../Components/HorizontalCard";
-import VerticalSmallCard from "../Components/VerticalCard";
+
 
 const Technology = () => {
   const [Post, setPost] = useState("");
@@ -9,17 +9,17 @@ const Technology = () => {
   const [TopPost, setTopPost] = useState("");
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/technologyPost")
+    fetch("http://localhost:8000/technologyPost")
       .then((res) => res.json()).then((json) => setPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/technologyFirstPost")
+    fetch("http://localhost:8000/technologyFirstPost")
       .then((res) => res.json()).then((json) => setFirstPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("https://blog-node-backend-q7632gxyq-meenakshipillai20.vercel.app/technologyTopPost")
+    fetch("http://localhost:8000/technologyTopPost")
       .then((res) => res.json()).then((json) => setTopPost(json));
   }, []);
   return (
@@ -34,7 +34,7 @@ const Technology = () => {
             {Post && Post.map((val) => {
               return (
                 <>
-                  <VerticalSmallCard id={val.id} img={val.img} title={val.title}
+                  <ArticlesCard id={val.id} img={val.img} title={val.title}
                     details={val.details} date={val.date} type={val.type}/>
                   <hr />
                 </>
@@ -48,7 +48,7 @@ const Technology = () => {
             {FirstPost && FirstPost.map((val) => {
               return (
                 <>
-                  <HorizontalSmallCard id={val.id} img={val.img} title={val.title}
+                  <TopPostCard id={val.id} img={val.img} title={val.title}
                     date={val.date} type={val.type} num={val.num}/>
                   <hr />
                 </>
@@ -58,7 +58,7 @@ const Technology = () => {
             {TopPost && TopPost.map((val) => {
               return (
                 <>
-                  <CardHead id={val.id} img={val.img} title={val.title}
+                  <TopPostsCardsHead id={val.id} img={val.img} title={val.title}
                     date={val.date} type={val.type} num={val.num} />
                   <hr />
                 </>
