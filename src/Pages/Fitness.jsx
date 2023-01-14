@@ -9,17 +9,17 @@ const Fitness = () => {
   const [TopPost, setTopPost] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/fitnessPost")
+    fetch("https://blog-node-backend-g41v.vercel.app/fitnessPost")
       .then((res) => res.json()).then((json) => setPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/fitnessFirstPost")
+    fetch("https://blog-node-backend-g41v.vercel.app/fitnessFirstPost")
       .then((res) => res.json()).then((json) => setFirstPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/fitnessTopPost")
+    fetch("https://blog-node-backend-g41v.vercel.app/fitnessTopPost")
       .then((res) => res.json()).then((json) => setTopPost(json));
   }, []);
   return (

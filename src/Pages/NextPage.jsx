@@ -5,17 +5,12 @@ import share from '../images/share.svg';
 import clap from '../images/clap.svg';
 import { useLocation } from "react-router-dom";
 
-
-
-
 const NextPage = () => {
  
   const location= useLocation();
    const {data } = location.state;
    console.log(data)
-
-
-
+   
   return (
     <>
   

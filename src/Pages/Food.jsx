@@ -9,17 +9,17 @@ export default function Food() {
   const [TopPost, setTopPost] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/foodPost")
+    fetch("https://blog-node-backend-g41v.vercel.app/foodPost")
       .then((res) => res.json()).then((json) => setPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/foodFirstPost")
+    fetch("https://blog-node-backend-g41v.vercel.app/foodFirstPost")
       .then((res) => res.json()).then((json) => setFirstPost(json));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/foodTopPost")
+    fetch("https://blog-node-backend-g41v.vercel.app/foodTopPost")
       .then((res) => res.json()).then((json) => setTopPost(json));
   }, []);
   return (

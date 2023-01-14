@@ -12,22 +12,22 @@ export default function Home() {
   const [lgImg, setlgImg] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/latest")
+    fetch("https://blog-node-backend-g41v.vercel.app/latest")
     .then((res) => res.json()).then((json) => setLatest(json));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/latestArticle")
+    fetch("https://blog-node-backend-g41v.vercel.app/latestArticle")
     .then((res) => res.json()).then((json) => setLatestArticle(json));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/smText")
+    fetch("https://blog-node-backend-g41v.vercel.app/smText")
     .then((res) => res.json()).then((json) => setsmImg(json));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/lgText")
+    fetch("https://blog-node-backend-g41v.vercel.app/lgText")
     .then((res) => res.json()).then((json) => setlgImg(json));
   }, []);
 
